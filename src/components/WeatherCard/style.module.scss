@@ -1,27 +1,46 @@
 .wrapper {
+  border-radius: 5px;
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  background: #2ec4b6;
+  color: white;
 
   .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .title {
-
+      font-size: 1.4em;
     }
 
     .info {
-
+      width: 30px;
+      height: 30px;
+      fill: white;
+      cursor: pointer;
     }
 
   }
 
   .shortInfoWeather {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
     .statusWeather {
-
+      fill: white;
+      width: 120px;
+      margin-bottom: 5px;
     }
 
-
     .temperatureText {
-
+      font-size: 3.5em;
     }
 
     .day {

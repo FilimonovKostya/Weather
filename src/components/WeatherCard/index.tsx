@@ -1,16 +1,18 @@
 import React from 'react';
 import style from './style.module.scss'
+import {ReactComponent as Info} from "./../../assets/icons/info.svg";
+import {ReactComponent as Cloud} from "./../../assets/icons/cloud.svg";
 
 const WeatherCard = () => {
     return (
         <div className={style.wrapper}>
             <div className={style.header}>
                 <p className={style.title}>City, KY</p>
-                <div className={style.info}>svg icon</div>
+                <div className={style.info}><Info/></div>
             </div>
             <div className={style.shortInfoWeather}>
-                <div className={style.statusWeather}>Cloud</div>
-                <span className={style.temperatureText}>72</span>
+                <div className={style.statusWeather}><Cloud/></div>
+                <span className={style.temperatureText}>72<sup>o</sup></span>
                 <span className={style.day}>Today</span>
             </div>
             <ul className={style.weatherList}>
