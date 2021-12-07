@@ -12,29 +12,29 @@ const WeatherCard = () => {
             </div>
             <div className={style.shortInfoWeather}>
                 <div className={style.statusWeather}><Cloud/></div>
-                <span className={style.temperatureText}>72<sup>o</sup></span>
+                <span className={style.temperatureText}>72°</span>
                 <span className={style.day}>Today</span>
             </div>
             <ul className={style.weatherList}>
                 <li className={style.itemWeather}>
                     <span> Sunday </span>
                     <div className={style.itemInfoWeather}>
-                        <p>icon</p>
-                        <p>44</p>
+                        <div><Cloud/></div>
+                        <p>44°</p>
                     </div>
                 </li>
                 <li className={style.itemWeather}>
                     <span> Sunday </span>
                     <div className={style.itemInfoWeather}>
-                        <p>icon</p>
-                        <p>44</p>
+                        <div><Cloud/></div>
+                        <p>44°</p>
                     </div>
                 </li>
                 <li className={style.itemWeather}>
                     <span> Sunday </span>
                     <div className={style.itemInfoWeather}>
-                        <p>icon</p>
-                        <p>44</p>
+                        <div><Cloud/></div>
+                        <p>44°</p>
                     </div>
                 </li>
             </ul>

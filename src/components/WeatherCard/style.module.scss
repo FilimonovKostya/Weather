@@ -44,17 +44,40 @@
     }
 
     .day {
-
+      font-size: 1.4em;
+      text-align: center;
     }
 
   }
 
   .weatherList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .itemWeather {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid white;
 
 
       .itemInfoWeather {
+        display: flex;
+
+        &:first-of-type div {
+          width: 25px;
+          margin-right: 7px;
+
+          svg {
+            fill: white;
+
+          }
+        }
+
+        p {
+          font-size: 1.3em;
+        }
+      ;
 
       }
     }
