@@ -3,43 +3,47 @@ import style from './style.module.scss'
 import {ReactComponent as Info} from "./../../assets/icons/info.svg";
 import {ReactComponent as Cloud} from "./../../assets/icons/cloud.svg";
 
-const WeatherCard = () => {
-    return (
-        <div className={style.wrapper}>
-            <div className={style.header}>
-                <p className={style.title}>City, KY</p>
-                <div className={style.info}><Info/></div>
-            </div>
-            <div className={style.shortInfoWeather}>
-                <div className={style.statusWeather}><Cloud/></div>
-                <span className={style.temperatureText}>72°</span>
-                <span className={style.day}>Today</span>
-            </div>
-            <ul className={style.weatherList}>
-                <li className={style.itemWeather}>
-                    <span> Sunday </span>
-                    <div className={style.itemInfoWeather}>
-                        <div><Cloud/></div>
-                        <p>44°</p>
-                    </div>
-                </li>
-                <li className={style.itemWeather}>
-                    <span> Sunday </span>
-                    <div className={style.itemInfoWeather}>
-                        <div><Cloud/></div>
-                        <p>44°</p>
-                    </div>
-                </li>
-                <li className={style.itemWeather}>
-                    <span> Sunday </span>
-                    <div className={style.itemInfoWeather}>
-                        <div><Cloud/></div>
-                        <p>44°</p>
-                    </div>
-                </li>
-            </ul>
+interface IWeatherCard {
+    callBack: (value: boolean) => void
+    isShowExtraInfo: boolean
+}
+
+const WeatherCard = ({isShowExtraInfo, callBack}: IWeatherCard) => (
+    <div className={style.wrapper}>
+        <div className={style.header}>
+            <p className={style.title}>City, KY</p>
+            <div className={style.info} onClick={() => callBack(!isShowExtraInfo)} role={"presentation"}>
+                <Info/></div>
         </div>
-    );
-};
+        <div className={style.shortInfoWeather}>
+            <div className={style.statusWeather}><Cloud/></div>
+            <span className={style.temperatureText}>72°</span>
+            <span className={style.day}>Today</span>
+        </div>
+        <ul className={style.weatherList}>
+            <li className={style.itemWeather}>
+                <span> Sunday </span>
+                <div className={style.itemInfoWeather}>
+                    <div><Cloud/></div>
+                    <p>44°</p>
+                </div>
+            </li>
+            <li className={style.itemWeather}>
+                <span> Sunday </span>
+                <div className={style.itemInfoWeather}>
+                    <div><Cloud/></div>
+                    <p>44°</p>
+                </div>
+            </li>
+            <li className={style.itemWeather}>
+                <span> Sunday </span>
+                <div className={style.itemInfoWeather}>
+                    <div><Cloud/></div>
+                    <p>44°</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+)
 
 export default WeatherCard;
