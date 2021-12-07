@@ -13,6 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 
     .title {
       font-size: 1.4em;
@@ -51,15 +52,22 @@
   }
 
   .weatherList {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
+
     .itemWeather {
       display: flex;
       justify-content: space-between;
+      padding-bottom: 10px;
       border-bottom: 1px solid white;
+      margin: 10px;
 
+      &:last-child {
+        border-bottom: none;
+      }
 
       .itemInfoWeather {
         display: flex;
