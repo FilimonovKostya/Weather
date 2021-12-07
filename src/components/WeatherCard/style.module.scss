@@ -61,6 +61,7 @@
     .itemWeather {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding-bottom: 10px;
       border-bottom: 1px solid white;
       margin: 10px;
@@ -71,6 +72,7 @@
 
       .itemInfoWeather {
         display: flex;
+        align-items: center;
 
         &:first-of-type div {
           width: 25px;

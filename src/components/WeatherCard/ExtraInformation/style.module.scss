@@ -1,0 +1,6 @@
+@import "src/components/WeatherCard/style.module";
+
+.redWrapper {
+  @extend .wrapper;
+  background: #e71d36;
+}
