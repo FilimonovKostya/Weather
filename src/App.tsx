@@ -5,13 +5,13 @@ import ExtraInformation from "./components/WeatherCard/ExtraInformation";
 function App() {
     const [isShowExtraInfo, setIsShowExtraInfo] = useState(false)
 
-    return <>
+    return <div className={'app'}>
         {
             isShowExtraInfo
                 ? <ExtraInformation  callBack={setIsShowExtraInfo}/>
                 : <WeatherCard isShowExtraInfo={isShowExtraInfo} callBack={setIsShowExtraInfo}/>
         }
-    </>
+    </div>
 }
 
 export default App;
