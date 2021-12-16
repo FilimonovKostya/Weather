@@ -7,7 +7,7 @@ interface IExtraInformation {
 }
 
 const ExtraInformation = ({callBack}: IExtraInformation) => (
-    <div className={style.redWrapper}>
+    <div className={ style.redWrapper}>
         <div role={"presentation"} onClick={() => callBack(false)}>X</div>
         <ul className={style.weatherList}>
             <li className={style.itemWeather}>
