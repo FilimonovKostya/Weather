@@ -4,6 +4,16 @@
   @extend .wrapper;
   background: #e71d36;
 
+  .icon {
+    text-align: right;
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+      cursor: pointer;
+    }
+  }
+
   &.entering {
     background: gold;
     transform: rotate(15deg);
