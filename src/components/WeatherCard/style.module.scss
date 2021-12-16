@@ -10,6 +10,27 @@
   background: #2ec4b6;
   color: white;
   transition: all .2s ease-in;
+  transform: rotate(0deg);
+
+  &.entering {
+    background: gold;
+    transform: rotate(15deg);
+  }
+
+  &.entered {
+    background: white;
+    transform: rotate(30deg);
+  }
+
+  &.exiting {
+    background: pink;
+    transform: rotate(45deg);
+  }
+
+  &.exited {
+    background: darkorange;
+
+  }
 
 
   .header {
@@ -96,27 +117,6 @@
     }
   }
 
-  @keyframes inAnimation {
-    0% {
-      opacity: 0;
-      visibility: hidden;
-    }
-    100% {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  @keyframes outAnimation {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
 
 }
-
 

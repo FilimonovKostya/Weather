@@ -4,4 +4,22 @@
   @extend .wrapper;
   background: #e71d36;
 
+  &.entering {
+    background: gold;
+    transform: rotate(15deg);
+  }
+
+  &.entered {
+    background: white;
+    transform: rotate(30deg);
+  }
+
+  &.exiting {
+    background: pink;
+    transform: rotate(45deg);
+  }
+
+  &.exited {
+    background: darkorange;
+  }
 }

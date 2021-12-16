@@ -6,11 +6,14 @@ function App() {
     const [isShowExtraInfo, setIsShowExtraInfo] = useState(false)
 
     return <div className={'app'}>
+
         {
             isShowExtraInfo
-                ? <ExtraInformation  callBack={setIsShowExtraInfo}/>
+                ? <ExtraInformation callBack={setIsShowExtraInfo}/>
                 : <WeatherCard isShowExtraInfo={isShowExtraInfo} callBack={setIsShowExtraInfo}/>
         }
+
+
     </div>
 }
 
