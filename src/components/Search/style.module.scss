@@ -1,0 +1,88 @@
+$size: 20px;
+
+.searchBar {
+  height: auto;
+  width: auto;
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+
+  input {
+    height: 44px;
+    width: 44px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    border: $size/10 solid transparent;
+    border-radius: 44px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.5s ease-out;
+
+    color: transparent;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:invalid {
+      box-shadow: none;
+    }
+
+    &:hover {
+      border: $size/10 solid #FFF;
+      box-shadow: 0 0 $size/10 $size/10 #EEE;
+    }
+
+    &:focus, &:valid {
+      width: 300px;
+      border: $size/10 solid #CCC;
+      outline: none;
+      cursor: auto;
+      background-color: #FFF;
+      color: #000;
+
+      &::placeholder {
+        color: #999;
+      }
+
+      + .search-icon {
+        z-index: 0;
+        border-color: #CCC;
+        right: 20px;
+
+        &:after {
+          background-color: #CCC;
+        }
+      }
+    }
+  }
+}
+
+
+.searchIcon {
+  display: inline-block;
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+  border: $size/10 solid #FFF;
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  z-index: -1;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: $size/2 + $size/4*1.414 + $size/10;
+    left: $size/2 + $size/4*1.414;
+    transform: rotate(45deg);
+    height: $size/10;
+    width: $size/2;
+    background-color: #FFF;
+    border-radius: 10px;
+  }
+}
