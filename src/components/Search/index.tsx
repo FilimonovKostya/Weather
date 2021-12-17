@@ -7,7 +7,6 @@ import {onChangeValue} from 'store/reducers/search';
 
 const Search = () => {
     const value = useSelector<RootState, string>(state => state.search.value)
-    console.log('value',value)
     const dispatch = useDispatch()
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => dispatch(onChangeValue(e.currentTarget.value))
