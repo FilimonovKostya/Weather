@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './style.module.scss'
-import {ReactComponent as Info} from "./../../assets/icons/info.svg";
-import {ReactComponent as Cloud} from "./../../assets/icons/cloud.svg";
+import {ReactComponent as Info} from "assets/icons/info.svg";
+import {ReactComponent as Cloud} from "assets/icons/cloud.svg";
 
 interface IWeatherCard {
     callBack: (value: boolean) => void

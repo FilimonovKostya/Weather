@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./style.module.scss";
-import {ReactComponent as Cloud} from "../../../assets/icons/cloud.svg";
-import {ReactComponent as Arrow} from "../../../assets/icons/arrow.svg";
+import {ReactComponent as Cloud} from "assets/icons/cloud.svg";
+import {ReactComponent as Arrow} from "assets/icons/arrow.svg";
 
 interface IExtraInformation {
     callBack: (value: boolean) => void
