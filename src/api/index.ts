@@ -1,5 +1,5 @@
 import axios from "axios";
-import {ISearchResponse} from "./types";
+import {IWeatherCardResponse} from "./types";
 
 const instance = axios.create({
     baseURL: 'http://api.openweathermap.org/data/2.5/weather',
@@ -7,6 +7,6 @@ const instance = axios.create({
 })
 
 
-const searchAPI = (value: string) => instance.get<ISearchResponse>(`?q=${value}`)
+const searchAPI = (value: string) => instance.get<IWeatherCardResponse>(`?q=${value}`)
 
 export default searchAPI

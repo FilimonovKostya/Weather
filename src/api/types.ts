@@ -1,4 +1,4 @@
-export interface ISearchResponse {
+export interface IWeatherCardResponse {
     coord: {
         lon: number,
         lat: number
