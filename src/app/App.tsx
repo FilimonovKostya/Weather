@@ -5,6 +5,7 @@ import {RootState} from "../store/store";
 import {IWeatherCardResponse} from "../api/types";
 import WeatherCard from "../components/WeatherCard";
 import {Transition} from "react-transition-group";
+import {DURATION_ANIMATION} from "../constants";
 
 
 function App() {
@@ -14,11 +15,11 @@ function App() {
 
     return <div className={'app'}>
 
-        <Transition in={isShowCard} timeout={600}>
+        <Transition in={isShowCard} timeout={DURATION_ANIMATION}>
             {state => <Search setValue={setIShowCard} className={`${state}`}/>}
         </Transition>
 
-        <Transition in={weatherCard.length !== 0} timeout={600} mountOnEnter unmountOnExit>
+        <Transition in={weatherCard.length !== 0} timeout={DURATION_ANIMATION} mountOnEnter unmountOnExit>
             {state => weatherCard.map((card, index) =>
                 <WeatherCard
                     key={index}

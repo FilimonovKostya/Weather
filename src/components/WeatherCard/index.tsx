@@ -16,9 +16,7 @@ interface IWeatherCard {
     temp: number
 }
 
-const WeatherCard = ({removeCard,className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp}: IWeatherCard) => {
-    console.log('className in WeatherCard', className)
-
+const WeatherCard = ({removeCard, className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp}: IWeatherCard) => {
     return (
         <div className={`${style.wrapper} ${style[className]}`}>
             <div className={style.header}>
@@ -28,6 +26,7 @@ const WeatherCard = ({removeCard,className, isShowExtraInfo, callBack, country, 
             </div>
             <div className={style.shortInfoWeather}>
                 <div className={style.statusWeather}><Cloud/></div>
+
                 <span className={style.temperatureText}>{temp}°</span>
                 <span className={style.day}>Today</span>
             </div>
