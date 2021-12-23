@@ -1,7 +1,6 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {IState} from "./types";
 import searchAPI from "../../../api";
-import {IWeatherCardResponse} from "../../../api/types";
 
 const initialState: IState = {
     title: '',
@@ -12,10 +11,9 @@ export const fetchSearch = createAsyncThunk('search/fetch', async (city: string,
     try {
         const {data} = await searchAPI(city)
 
-        console.log('response', data)
-        thunkAPI.dispatch(addWeatherCard(data))
+        return {data}
     } catch (e) {
-        console.log('Error in fetchSearch', e)
+        throw new Error('Error with request for weather data')
     }
 })
 
@@ -26,14 +24,18 @@ const slice = createSlice({
         onChangeValue: (state, action: PayloadAction<string>) => {
             state.title = action.payload
         },
-        addWeatherCard: (state, action: PayloadAction<IWeatherCardResponse>) => {
-            console.log('response in addWeatherCard', action.payload)
-            state.cards.unshift(action.payload)
-        }
     },
+    extraReducers: builder => {
+        builder
+            .addCase(fetchSearch.fulfilled, (((state, action) => {
+                console.log('response in addWeatherCard', action.payload)
+                state.cards.unshift(action.payload.data)
+            })))
+    }
+
 
 })
 
-export const {onChangeValue, addWeatherCard} = slice.actions
+export const {onChangeValue} = slice.actions
 
 export const weatherSlice = slice.reducer
