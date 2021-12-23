@@ -7,6 +7,6 @@ const instance = axios.create({
 })
 
 
-const searchAPI = (value: string) => instance.get<IWeatherCardResponse>(`?q=${value}`)
+const searchAPI = (city: string) => instance.get<IWeatherCardResponse>(`?q=${city}`)
 
 export default searchAPI
