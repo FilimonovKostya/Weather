@@ -4,20 +4,26 @@ import {ReactComponent as Info} from "assets/icons/info.svg";
 import {ReactComponent as Cloud} from "assets/icons/cloud.svg";
 
 interface IWeatherCard {
-    callBack: (value: boolean) => void
-    isShowExtraInfo: boolean
+    callBack?: (value: boolean) => void
+    isShowExtraInfo?: boolean
+    name: string
+    speed: number
+    country: string
+    description: string
+    icon: string
+    temp: number
 }
 
-const WeatherCard = ({isShowExtraInfo, callBack}: IWeatherCard) => (
+const WeatherCard = ({isShowExtraInfo, callBack, country, description, icon, name, speed, temp}: IWeatherCard) => (
     <div className={style.wrapper}>
         <div className={style.header}>
-            <p className={style.title}>City, KY</p>
-            <div className={style.info} onClick={() => callBack(!isShowExtraInfo)} role={"presentation"}>
+            <p className={style.title}>{name}, {country}</p>
+            <div className={style.info} onClick={() => console.log('click card')} role={"presentation"}>
                 <Info/></div>
         </div>
         <div className={style.shortInfoWeather}>
             <div className={style.statusWeather}><Cloud/></div>
-            <span className={style.temperatureText}>72°</span>
+            <span className={style.temperatureText}>{temp}°</span>
             <span className={style.day}>Today</span>
         </div>
         <ul className={style.weatherList}>
