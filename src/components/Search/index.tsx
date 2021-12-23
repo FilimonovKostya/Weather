@@ -4,17 +4,28 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from 'store/store';
 import {fetchSearch, onChangeValue} from 'store/reducers/search';
 
+interface ISearch {
+    setValue: (number: boolean) => void
+    className: string
+}
 
-const Search = () => {
+const Search = ({setValue, className}: ISearch) => {
     const dispatch = useDispatch()
 
     const city = useSelector<RootState, string>(state => state.weather.title)
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => dispatch(onChangeValue(e.currentTarget.value))
-    const onEnterHandler = (e: KeyboardEvent<HTMLInputElement>) => e.code === 'Enter' && dispatch(fetchSearch(city))
+    const onEnterHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.code === 'Enter') {
+            setValue(true)
+            dispatch(fetchSearch(city))
+        }
+
+    }
+
 
     return (
-        <div className={style.searchBar}>
+        <div className={`${style.searchBar} ${style[className]}`}>
             <input type="text" value={city} onChange={onChangeHandler}
                    onKeyPress={onEnterHandler}
                    placeholder="Write City or Country" required/>

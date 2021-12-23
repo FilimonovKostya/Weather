@@ -28,7 +28,6 @@ const slice = createSlice({
     extraReducers: builder => {
         builder
             .addCase(fetchSearch.fulfilled, (((state, action) => {
-                console.log('response in addWeatherCard', action.payload)
                 state.cards.unshift(action.payload.data)
             })))
     }

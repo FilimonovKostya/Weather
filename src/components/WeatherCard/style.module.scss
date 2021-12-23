@@ -13,23 +13,19 @@
   transform: rotate(0deg);
 
   &.entering {
-    background: gold;
-    transform: rotate(15deg);
+    animation: animateHeight .6s ease-in;
   }
 
   &.entered {
-    background: white;
-    transform: rotate(30deg);
+    animation: animateHeight .6s ease-in;
   }
 
   &.exiting {
-    background: pink;
-    transform: rotate(45deg);
+    animation: animateRemoved .6s ease-in;
   }
 
   &.exited {
-    background: darkorange;
-
+    animation: animateRemoved .6s ease-in;
   }
 
 
@@ -117,6 +113,47 @@
     }
   }
 
+  @keyframes animateHeight {
+    0% {
+      opacity: .3;
+      margin-top: 20%;
+    }
+    50% {
+      opacity: .6;
+    }
+    70% {
+      opacity: .9;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      margin-top: 0;
+    }
+  }
+
+  @keyframes animateRemoved {
+    0% {
+      opacity: 1;
+      margin-top: 0;
+    }
+    50% {
+      opacity: .9;
+      margin-top: 10%;
+    }
+    70% {
+      opacity: .6;
+      margin-top: 15%;
+    }
+    90% {
+      opacity: .3;
+      margin-top: 20%;
+    }
+    100% {
+      opacity: .1;
+      margin-top: 22%;
+    }
+  }
 
 }
 

@@ -6,6 +6,26 @@ $size: 20px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all .5s ease-in;
+  z-index: 2;
+
+  &.entering {
+    top: 20%
+  }
+
+  &.entered {
+    top: 20%;
+  }
+
+  //&.exiting {
+  //  border: 5px solid lightblue;
+  //  //top:10%
+  //}
+
+  //&.exited {
+  //  border: 5px solid lightsalmon;
+  //
+  //}
 
   input {
     height: 44px;
