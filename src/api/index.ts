@@ -1,12 +1,13 @@
 import axios from "axios";
+import {API_KEY, API_URL} from "../constants";
 import {IWeatherCardResponse} from "./types";
 
 const instance = axios.create({
-    baseURL: 'http://api.openweathermap.org/data/2.5/weather?units=metric',
-    params: {appid: '3cd1cd1507089288f25c162d3747cbae'}
+    baseURL: API_URL,
+    params: {appid: API_KEY}
 })
 
 
-const searchAPI = (city: string) => instance.get<IWeatherCardResponse>(`&q=${city}`)
+const searchAPI = (city: string) => instance.get<IWeatherCardResponse>(`weather?units=metric&q=${city}`)
 
 export default searchAPI

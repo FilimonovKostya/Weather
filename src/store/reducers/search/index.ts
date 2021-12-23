@@ -28,7 +28,14 @@ const slice = createSlice({
     extraReducers: builder => {
         builder
             .addCase(fetchSearch.fulfilled, (((state, action) => {
-                state.cards.unshift(action.payload.data)
+                state.cards.unshift({
+                    ...action.payload.data,
+                    main: {
+                        ...action.payload.data.main,
+                        temp: Math.round(action.payload.data.main.temp)
+                    }
+                })
+                state.title = ''
             })))
     }
 

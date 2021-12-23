@@ -54,7 +54,6 @@ const WeatherCard = ({removeCard,className, isShowExtraInfo, callBack, country, 
                     </div>
                 </li>
             </ul>
-            <button onClick={() => removeCard(false)}>Remove Card</button>
         </div>
     )
 }

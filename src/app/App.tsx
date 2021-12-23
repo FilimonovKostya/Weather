@@ -32,8 +32,6 @@ function App() {
                     icon={card.weather[0].icon}
                 />)
             }
-
-
         </Transition>
 
 
