@@ -14,7 +14,10 @@ interface IWeatherCard {
     temp: number
 }
 
-const WeatherCard = ({isShowExtraInfo, callBack, country, description, icon, name, speed, temp}: IWeatherCard) => (
+const WeatherCard = ({isShowExtraInfo, callBack, country, description, icon, name, speed, temp}: IWeatherCard) => {
+    console.log('temp', temp)
+
+    return(
     <div className={style.wrapper}>
         <div className={style.header}>
             <p className={style.title}>{name}, {country}</p>
@@ -50,6 +53,6 @@ const WeatherCard = ({isShowExtraInfo, callBack, country, description, icon, nam
             </li>
         </ul>
     </div>
-)
+)}
 
 export default WeatherCard;
