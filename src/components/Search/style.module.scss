@@ -10,22 +10,20 @@ $size: 20px;
   z-index: 2;
 
   &.entering {
-    top: 20%
+
   }
 
   &.entered {
-    top: 20%;
+
   }
 
-  //&.exiting {
-  //  border: 5px solid lightblue;
-  //  //top:10%
-  //}
+  &.exiting {
+    top: 20%
+  }
 
-  //&.exited {
-  //  border: 5px solid lightsalmon;
-  //
-  //}
+  &.exited {
+    top: 20%
+  }
 
   input {
     height: 44px;

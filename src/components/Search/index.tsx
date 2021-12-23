@@ -5,11 +5,10 @@ import {RootState} from 'store/store';
 import {fetchSearch, onChangeValue} from 'store/reducers/search';
 
 interface ISearch {
-    setValue: (number: boolean) => void
     className: string
 }
 
-const Search = ({setValue, className}: ISearch) => {
+const Search = ({className}: ISearch) => {
     const dispatch = useDispatch()
 
     const city = useSelector<RootState, string>(state => state.weather.title)
@@ -17,7 +16,6 @@ const Search = ({setValue, className}: ISearch) => {
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => dispatch(onChangeValue(e.currentTarget.value))
     const onEnterHandler = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.code === 'Enter') {
-            setValue(true)
             dispatch(fetchSearch(city))
         }
 

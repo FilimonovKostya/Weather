@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Search from 'components/Search';
 import {useSelector} from "react-redux";
 import {RootState} from "../store/store";
@@ -10,20 +10,17 @@ import {DURATION_ANIMATION} from "../constants";
 
 function App() {
     const weatherCard = useSelector<RootState, IWeatherCardResponse[]>(state => state.weather.cards)
-    const [isShowCard, setIShowCard] = useState(false)
-
 
     return <div className={'app'}>
 
-        <Transition in={isShowCard} timeout={DURATION_ANIMATION}>
-            {state => <Search setValue={setIShowCard} className={`${state}`}/>}
+        <Transition in={weatherCard.length === 0} timeout={DURATION_ANIMATION}>
+            {state => <Search className={`${state}`}/>}
         </Transition>
 
         <Transition in={weatherCard.length !== 0} timeout={DURATION_ANIMATION} mountOnEnter unmountOnExit>
             {state => weatherCard.map((card, index) =>
                 <WeatherCard
                     key={index}
-                    removeCard={setIShowCard}
                     className={`${state}`}
                     country={card.sys.country}
                     name={card.name}

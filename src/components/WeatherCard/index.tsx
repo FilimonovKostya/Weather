@@ -4,7 +4,6 @@ import {ReactComponent as Info} from "assets/icons/info.svg";
 import {ReactComponent as Cloud} from "assets/icons/cloud.svg";
 
 interface IWeatherCard {
-    removeCard: (number: boolean) => void
     className: string
     callBack?: (value: boolean) => void
     isShowExtraInfo?: boolean
@@ -16,7 +15,7 @@ interface IWeatherCard {
     temp: number
 }
 
-const WeatherCard = ({removeCard, className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp}: IWeatherCard) => {
+const WeatherCard = ({ className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp}: IWeatherCard) => {
     return (
         <div className={`${style.wrapper} ${style[className]}`}>
             <div className={style.header}>
