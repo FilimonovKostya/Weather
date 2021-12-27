@@ -21,7 +21,7 @@ code {
     monospace;
 }
 
-.app{
+.app {
     display: flex;
     justify-content: center;
     height: 100vh;
