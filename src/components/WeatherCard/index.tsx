@@ -2,6 +2,7 @@ import React from 'react';
 import style from './style.module.scss'
 import {ReactComponent as Info} from "assets/icons/info.svg";
 import {ReactComponent as Cloud} from "assets/icons/cloud.svg";
+import {data} from "dataOfWeather";
 
 interface IWeatherCard {
     className: string
@@ -20,6 +21,7 @@ const WeatherCard = ({ className, isShowExtraInfo, callBack, country, descriptio
         <div className={`${style.wrapper} ${style[className]}`}>
             <div className={style.header}>
                 <p className={style.title}>{name}, {country}</p>
+                <img src={data["overcast clouds"]} alt=""/>
                 <div className={style.info} onClick={() => console.log('click card')} role={"presentation"}>
                     <Info/></div>
             </div>
