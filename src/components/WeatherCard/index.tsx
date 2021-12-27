@@ -21,7 +21,7 @@ const WeatherCard = ({ className, isShowExtraInfo, callBack, country, descriptio
         <div className={`${style.wrapper} ${style[className]}`}>
             <div className={style.header}>
                 <p className={style.title}>{name}, {country}</p>
-                <img src={data["overcast clouds"]} alt=""/>
+                <img src={'http://openweathermap.org/img/wn/02d.png'} alt=""/>
                 <div className={style.info} onClick={() => console.log('click card')} role={"presentation"}>
                     <Info/></div>
             </div>
