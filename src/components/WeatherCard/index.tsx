@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './style.module.scss'
 import {ReactComponent as Info} from "assets/icons/info.svg";
-import {ReactComponent as Cloud} from "assets/icons/cloud.svg";
 import {data} from "dataOfWeather";
+import {API_URL_ICON} from "../../constants";
 
 interface IWeatherCard {
     className: string
@@ -16,17 +16,17 @@ interface IWeatherCard {
     temp: number
 }
 
-const WeatherCard = ({ className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp}: IWeatherCard) => {
+const WeatherCard = ({className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp}: IWeatherCard) => {
     return (
         <div className={`${style.wrapper} ${style[className]}`}>
             <div className={style.header}>
                 <p className={style.title}>{name}, {country}</p>
-                <img src={'http://openweathermap.org/img/wn/02d.png'} alt=""/>
+                <img src={`${API_URL_ICON}${icon}.png`} alt=""/>
                 <div className={style.info} onClick={() => console.log('click card')} role={"presentation"}>
                     <Info/></div>
             </div>
             <div className={style.shortInfoWeather}>
-                <div className={style.statusWeather}><Cloud/></div>
+                <div className={style.statusWeather}/>
 
                 <span className={style.temperatureText}>{temp}°</span>
                 <span className={style.day}>Today</span>
@@ -35,21 +35,21 @@ const WeatherCard = ({ className, isShowExtraInfo, callBack, country, descriptio
                 <li className={style.itemWeather}>
                     <span> Sunday </span>
                     <div className={style.itemInfoWeather}>
-                        <div><Cloud/></div>
+                        <div></div>
                         <p>44°</p>
                     </div>
                 </li>
                 <li className={style.itemWeather}>
                     <span> Sunday </span>
                     <div className={style.itemInfoWeather}>
-                        <div><Cloud/></div>
+                        <div></div>
                         <p>44°</p>
                     </div>
                 </li>
                 <li className={style.itemWeather}>
                     <span> Sunday </span>
                     <div className={style.itemInfoWeather}>
-                        <div><Cloud/></div>
+                        <div></div>
                         <p>44°</p>
                     </div>
                 </li>
