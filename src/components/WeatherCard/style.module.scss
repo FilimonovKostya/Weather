@@ -55,13 +55,38 @@
     flex-direction: column;
 
     .statusWeather {
-      fill: white;
-      width: 120px;
-      margin-bottom: 5px;
+      position: relative;
+
+      img {
+        cursor: help;
+      }
+
+      .tooltip {
+        width: 150px;
+        position: absolute;
+        top: -12%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+        background-color: black;
+        color: #fff;
+        border-radius: 6px;
+        padding: 5px 0;
+        z-index: 1;
+      }
+
+      &:hover span {
+        visibility: visible;
+        opacity: 1;
+      }
+
     }
 
     .temperatureText {
-      font-size: 3.5em;
+      font-size: 2.5em;
     }
 
     .day {
