@@ -24,7 +24,7 @@ export interface IWeatherCardResponse {
     wind: {
         speed: number,
         deg: number,
-        gust: number
+        gust: number,
     },
     clouds: {
         all: number
@@ -41,4 +41,11 @@ export interface IWeatherCardResponse {
     id: number,
     name: string,
     cod: number
+}
+
+export interface IForecastDaysResponse {
+    lat: number,
+    lon: number,
+    timezone: string,
+    timezone_offset: number
 }
