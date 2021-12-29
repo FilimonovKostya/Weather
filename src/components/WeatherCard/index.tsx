@@ -9,7 +9,7 @@ import {API_URL_ICON} from "../../constants";
 
 interface IWeatherCard {
     className: string
-    callBack?: (value: boolean) => void
+    callBack: (value: boolean) => void
     isShowExtraInfo?: boolean
     name: string
     speed: number
@@ -19,15 +19,15 @@ interface IWeatherCard {
     temp: number
     feelsLike: number
     sunrise: string | number
+    humidity: number
 }
 
-const WeatherCard = ({className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp, feelsLike, sunrise}: IWeatherCard) => {
+const WeatherCard = ({className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp, feelsLike, sunrise, humidity}: IWeatherCard) => {
     return (
         <div className={`${style.wrapper} ${style[className]}`}>
             <div className={style.header}>
-                <p className={style.title}>{name}, {country}</p>
-
-                <div className={style.info} onClick={() => console.log('click card')} role={"presentation"}>
+                <p className={style.title}>{name}, {country} </p>
+                <div className={style.info} onClick={() => callBack(true)} role={"presentation"}>
                     <Info/></div>
             </div>
             <div className={style.shortInfoWeather}>
@@ -54,13 +54,13 @@ const WeatherCard = ({className, isShowExtraInfo, callBack, country, description
                 <li className={style.itemWeather}>
                     <HumidityIcon/>
                     <div className={style.itemInfoWeather}>
-                        <p>44°</p>
+                        <p>{humidity}%</p>
                     </div>
                 </li>
                 <li className={style.itemWeather}>
                     <WindSpeedIcon/>
                     <div className={style.itemInfoWeather}>
-                        <p>44°</p>
+                        <p>{speed}</p>
                     </div>
                 </li>
             </ul>
