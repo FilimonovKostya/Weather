@@ -27,24 +27,24 @@ const WeatherCard = ({className, country, description, icon, name, speed, temp, 
     const [isShowExtraInfo, setIsShowExtraInfo] = useState(false)
 
     return (
-        <>
+        <div className={`${style.parent} ${style[className]}`}>
             {!isShowExtraInfo
-                ? <MainInfo className={className} isShowExtraInfo={isShowExtraInfo} callBack={setIsShowExtraInfo} country={country} description={description}
+                ? <MainInfo className={'test'} isShowExtraInfo={isShowExtraInfo} callBack={setIsShowExtraInfo} country={country} description={description}
                             icon={icon} name={name} speed={speed} temp={temp} feelsLike={feelsLike} sunrise={sunrise} humidity={humidity}
                 />
                 : <ExtraInformation callBack={setIsShowExtraInfo}/>
             }
-        </>
+        </div>
     )
 }
 
 interface MainInfo extends IWeatherCard {
-    isShowExtraInfo:boolean
+    isShowExtraInfo: boolean
     callBack: (value: boolean) => void
 }
 
 const MainInfo = ({className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp, feelsLike, sunrise, humidity}: MainInfo) => (
-    <div className={`${style.wrapper} ${style[className]}`}>
+    <div className={`${style.wrapper}`}>
         <div className={style.header}>
             <p className={style.title}>{name}, {country} </p>
             <div className={style.info} onClick={() => callBack(true)} role={"presentation"}>

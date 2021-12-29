@@ -12,6 +12,7 @@ import ExtraInformation from "../components/WeatherCard/ExtraInformation";
 function App() {
     const weatherCard = useSelector<RootState, IWeatherCardResponse[]>(state => state.weather.cards)
 
+    console.log('app')
 
     return <div className={'app'}>
 

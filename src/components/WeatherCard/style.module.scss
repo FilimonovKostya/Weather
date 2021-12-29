@@ -1,3 +1,21 @@
+.parent {
+  &.entering {
+    animation: animateHeight .6s ease-in;
+  }
+
+  &.entered {
+    animation: animateHeight .6s ease-in;
+  }
+
+  &.exiting {
+    //animation: animateRemoved .6s ease-in;
+  }
+
+  &.exited {
+    //animation: animateRemoved .6s ease-in;
+  }
+}
+
 .wrapper {
   border-radius: 5px;
   max-width: 350px;
