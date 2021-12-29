@@ -1,4 +1,7 @@
 .parent {
+  max-width: 350px;
+  width: 100%;
+
   &.entering {
     animation: animateHeight .6s ease-in;
   }
