@@ -22,7 +22,6 @@ interface IWeatherCard {
 }
 
 const WeatherCard = ({className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp, feelsLike, sunrise}: IWeatherCard) => {
-    console.log('sun', sunrise)
     return (
         <div className={`${style.wrapper} ${style[className]}`}>
             <div className={style.header}>

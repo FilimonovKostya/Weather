@@ -41,7 +41,6 @@ const slice = createSlice({
                         sunrise: dateHelper(+action.payload.data.sys.sunrise)
                     }
                 })
-                console.log(action.payload.data)
                 state.title = ''
             })))
     }
