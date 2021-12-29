@@ -18,9 +18,11 @@ interface IWeatherCard {
     icon: string
     temp: number
     feelsLike: number
+    sunrise: string | number
 }
 
-const WeatherCard = ({className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp, feelsLike}: IWeatherCard) => {
+const WeatherCard = ({className, isShowExtraInfo, callBack, country, description, icon, name, speed, temp, feelsLike, sunrise}: IWeatherCard) => {
+    console.log('sun', sunrise)
     return (
         <div className={`${style.wrapper} ${style[className]}`}>
             <div className={style.header}>
@@ -47,7 +49,7 @@ const WeatherCard = ({className, isShowExtraInfo, callBack, country, description
                 <li className={style.itemWeather}>
                     <Sunrise/>
                     <div className={style.itemInfoWeather}>
-                        <p>44°</p>
+                        <p>{sunrise}</p>
                     </div>
                 </li>
                 <li className={style.itemWeather}>

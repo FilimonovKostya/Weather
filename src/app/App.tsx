@@ -29,6 +29,7 @@ function App() {
                     description={card.weather[0].description}
                     feelsLike={card.main.feels_like}
                     icon={card.weather[0].icon}
+                    sunrise={card.sys.sunrise}
                 />)
             }
         </Transition>

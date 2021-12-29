@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {IState} from "./types";
 import {searchAPI} from "api";
+import {dateHelper} from "../../../helpers";
 
 const initialState: IState = {
     title: '',
@@ -32,9 +33,15 @@ const slice = createSlice({
                     ...action.payload.data,
                     main: {
                         ...action.payload.data.main,
-                        temp: Math.round(action.payload.data.main.temp)
+                        temp: Math.round(action.payload.data.main.temp),
+                        feels_like: Math.round(action.payload.data.main.feels_like)
+                    },
+                    sys:{
+                        ...action.payload.data.sys,
+                        sunrise: dateHelper(+action.payload.data.sys.sunrise)
                     }
                 })
+                console.log(action.payload.data)
                 state.title = ''
             })))
     }
