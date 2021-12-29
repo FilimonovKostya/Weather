@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Search from 'components/Search';
 import {useSelector} from "react-redux";
 import {RootState} from "store/store";
@@ -6,17 +6,10 @@ import {IWeatherCardResponse} from "api/types";
 import WeatherCard from "components/WeatherCard";
 import {Transition} from "react-transition-group";
 import {DURATION_ANIMATION} from "../constants";
-import {forecastDaysAPI} from "api";
 
 
 function App() {
     const weatherCard = useSelector<RootState, IWeatherCardResponse[]>(state => state.weather.cards)
-
-
-    useEffect(() => {
-        forecastDaysAPI()
-            .then(res => console.log('res', res))
-    }, [])
 
     return <div className={'app'}>
 
@@ -34,6 +27,7 @@ function App() {
                     speed={card.wind.speed}
                     temp={card.main.temp}
                     description={card.weather[0].description}
+                    feelsLike={card.main.feels_like}
                     icon={card.weather[0].icon}
                 />)
             }

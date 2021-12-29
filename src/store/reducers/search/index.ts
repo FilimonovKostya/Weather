@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {IState} from "./types";
-import searchAPI from "../../../api";
+import {searchAPI} from "api";
 
 const initialState: IState = {
     title: '',
