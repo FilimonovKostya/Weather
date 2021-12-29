@@ -11,7 +11,7 @@ import ExtraInformation from "../components/WeatherCard/ExtraInformation";
 
 function App() {
     const weatherCard = useSelector<RootState, IWeatherCardResponse[]>(state => state.weather.cards)
-    const [isShowExtraInfo, setIsShowExtraInfo] = useState(false)
+
 
     return <div className={'app'}>
 
@@ -21,8 +21,7 @@ function App() {
 
         <Transition in={weatherCard.length !== 0} timeout={DURATION_ANIMATION} mountOnEnter unmountOnExit>
             {state => weatherCard.map((card, index) =>
-                !isShowExtraInfo
-                    ? <WeatherCard
+                    <WeatherCard
                         key={index}
                         className={`${state}`}
                         country={card.sys.country}
@@ -34,10 +33,8 @@ function App() {
                         icon={card.weather[0].icon}
                         sunrise={card.sys.sunrise}
                         humidity={card.main.humidity}
-                        callBack={setIsShowExtraInfo}
-                    />
 
-                    : <ExtraInformation callBack={setIsShowExtraInfo}/>
+                    />
             )
             }
         </Transition>
