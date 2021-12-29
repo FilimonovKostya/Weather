@@ -3,10 +3,7 @@ import style from './style.module.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from 'store/store';
 import {fetchSearch, onChangeValue} from 'store/reducers/search';
-
-interface ISearch {
-    className: string
-}
+import {ISearch} from './types';
 
 const Search = ({className}: ISearch) => {
     const dispatch = useDispatch()

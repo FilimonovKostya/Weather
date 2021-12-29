@@ -1,0 +1,141 @@
+.wrapper {
+  border-radius: 5px;
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  //height: 440px;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  background: #2ec4b6;
+  color: white;
+  transition: all .2s ease-in;
+  transform: rotate(0deg);
+
+  &.entering {
+    animation: animateHeight .6s ease-in;
+  }
+
+  &.entered {
+    animation: animateHeight .6s ease-in;
+  }
+
+  &.exiting {
+    //animation: animateRemoved .6s ease-in;
+  }
+
+  &.exited {
+    //animation: animateRemoved .6s ease-in;
+  }
+
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .title {
+      font-size: 1.4em;
+    }
+
+    .info {
+      width: 30px;
+      height: 30px;
+      fill: white;
+      cursor: pointer;
+    }
+
+  }
+
+  .shortInfoWeather {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .statusWeather {
+      position: relative;
+
+      img {
+        cursor: help;
+      }
+
+      .tooltip {
+        width: 150px;
+        position: absolute;
+        top: -12%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+        background-color: black;
+        color: #fff;
+        border-radius: 6px;
+        padding: 5px 0;
+        z-index: 1;
+      }
+
+      &:hover span {
+        visibility: visible;
+        opacity: 1;
+      }
+
+    }
+
+    .temperatureText {
+      font-size: 2.5em;
+    }
+
+    .day {
+      font-size: 1.4em;
+      text-align: center;
+    }
+
+  }
+
+  .weatherList {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    .itemWeather {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid white;
+      margin: 10px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .itemInfoWeather {
+        display: flex;
+        align-items: center;
+
+        &:first-of-type div {
+          width: 25px;
+          margin-right: 7px;
+
+          svg {
+            fill: white;
+
+          }
+        }
+
+        p {
+          font-size: 1.3em;
+        }
+      ;
+
+      }
+    }
+  }
+
+}
