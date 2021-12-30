@@ -1,7 +1,7 @@
-import {Dailies, IWeatherCardResponse} from "api/types";
+import {IForecastDaysResponse, IWeatherCardResponse} from "api/types";
 
-interface IForecastDays {
-    [key: string]: Dailies[]
+export interface IForecastDays {
+    [key: string]: IForecastDaysResponse[]
 }
 
 export interface IState {

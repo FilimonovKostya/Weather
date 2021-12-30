@@ -12,13 +12,9 @@ const initialState: IState = {
 export const fetchSearch = createAsyncThunk('search/fetch', async (city: string, thunkAPI) => {
     try {
         const {data} = await searchAPI(city)
-
-        if (data) {
-            const data2 = await forecastDaysAPI(data.coord.lat, data.coord.lon)
-            console.log('Week ----->  ', data2.data)
-        }
-        console.log('DAY ----->  ', data)
-        return {data}
+        const {data: week} = await forecastDaysAPI(data.coord.lat, data.coord.lon)
+        console.log('weeek', week)
+        return {data, week}
     } catch (e) {
         throw new Error('Error with request for weather data')
     }
@@ -35,7 +31,14 @@ const slice = createSlice({
     extraReducers: builder => {
         builder
             .addCase(fetchSearch.fulfilled, (((state, action) => {
-                // state.forecastDays.unshift(action.payload.daily[0])
+                const weekCord = `${action.payload.week.lat}${action.payload.week.lon}`
+                const dayCord = `${action.payload.data.coord.lat}${action.payload.data.coord.lon}`
+
+                console.log('weekCord', weekCord)
+                console.log('dayCord', dayCord)
+
+                state.forecastDays[weekCord] = [action.payload.week]
+
 
                 state.cards.unshift({
                     ...action.payload.data,
@@ -49,6 +52,7 @@ const slice = createSlice({
                         sunrise: dateHelper(+action.payload.data.sys.sunrise)
                     }
                 })
+
                 state.title = ''
             })))
     }

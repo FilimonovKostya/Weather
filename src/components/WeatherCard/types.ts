@@ -1,3 +1,6 @@
+import {IForecastDays} from "../../store/reducers/search/types";
+import {Dailies} from "../../api/types";
+
 export interface IWeatherCard {
     className: string
     callBack?: (value: boolean) => void
@@ -11,4 +14,5 @@ export interface IWeatherCard {
     feelsLike: number
     sunrise: string | number
     humidity: number
+    week:Dailies[]
 }
