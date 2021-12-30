@@ -12,7 +12,6 @@ export const forecastDays = axios.create({
     params: {appid: API_KEY}
 })
 
-
 export const searchAPI = (city: string) => weather.get<IWeatherCardResponse>(`weather?units=metric&q=${city}`)
 export const forecastDaysAPI = (lat: number, lon: number) => forecastDays.get<IForecastDaysResponse>(`&lat=${lat}&lon=${lon}`)
 

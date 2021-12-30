@@ -1,7 +1,7 @@
 import {IForecastDaysResponse, IWeatherCardResponse} from "api/types";
 
 export interface IForecastDays {
-    [key: string]: IForecastDaysResponse[]
+    [key: string]: IForecastDaysResponse
 }
 
 export interface IState {

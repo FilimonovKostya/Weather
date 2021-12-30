@@ -1,4 +1,4 @@
-import {Dailies} from "../../../api/types";
+import {Dailies} from "api/types";
 
 export interface IExtraInformation {
     callBack: (value: boolean) => void

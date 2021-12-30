@@ -1,5 +1,4 @@
-import {IForecastDays} from "../../store/reducers/search/types";
-import {Dailies} from "../../api/types";
+import {Dailies} from "api/types";
 
 export interface IWeatherCard {
     className: string
@@ -14,5 +13,5 @@ export interface IWeatherCard {
     feelsLike: number
     sunrise: string | number
     humidity: number
-    week:Dailies[]
+    week: Dailies[]
 }

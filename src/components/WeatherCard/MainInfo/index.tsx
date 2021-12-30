@@ -1,14 +1,14 @@
 import React from "react";
 import style from "./style.module.scss";
-import {ReactComponent as Info} from "../../../assets/icons/info.svg";
+import {ReactComponent as Info} from "assets/icons/info.svg";
 import {API_URL_ICON} from "../../../constants";
-import {ReactComponent as FeelsLikeIcon} from "../../../assets/icons/temperature-feels-like.svg";
-import {ReactComponent as Sunrise} from "../../../assets/icons/sunrise-svgrepo-com.svg";
-import {ReactComponent as HumidityIcon} from "../../../assets/icons/humidity-svgrepo-com.svg";
-import {ReactComponent as WindSpeedIcon} from "../../../assets/icons/wind-svgrepo-com.svg";
+import {ReactComponent as FeelsLikeIcon} from "assets/icons/temperature-feels-like.svg";
+import {ReactComponent as Sunrise} from "assets/icons/sunrise-svgrepo-com.svg";
+import {ReactComponent as HumidityIcon} from "assets/icons/humidity-svgrepo-com.svg";
+import {ReactComponent as WindSpeedIcon} from "assets/icons/wind-svgrepo-com.svg";
 import {IMainInfo} from "./types";
 
-export const MainInfo = ({ callBack, country, description, icon, name, speed, temp, feelsLike, sunrise, humidity}: IMainInfo) => (
+export const MainInfo = ({callBack, country, description, icon, name, speed, temp, feelsLike, sunrise, humidity}: IMainInfo) => (
     <div className={style.wrapper}>
         <div className={style.header}>
             <p className={style.title}>{name}, {country} </p>

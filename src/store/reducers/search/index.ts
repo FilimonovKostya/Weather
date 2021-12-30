@@ -9,11 +9,11 @@ const initialState: IState = {
     forecastDays: {}
 }
 
-export const fetchSearch = createAsyncThunk('search/fetch', async (city: string, thunkAPI) => {
+export const fetchSearch = createAsyncThunk('search/fetch', async (city: string) => {
     try {
         const {data} = await searchAPI(city)
         const {data: week} = await forecastDaysAPI(data.coord.lat, data.coord.lon)
-        console.log('weeek', week)
+
         return {data, week}
     } catch (e) {
         throw new Error('Error with request for weather data')
@@ -32,13 +32,8 @@ const slice = createSlice({
         builder
             .addCase(fetchSearch.fulfilled, (((state, action) => {
                 const weekCord = `${action.payload.week.lat}${action.payload.week.lon}`
-                const dayCord = `${action.payload.data.coord.lat}${action.payload.data.coord.lon}`
 
-                console.log('weekCord', weekCord)
-                console.log('dayCord', dayCord)
-
-                state.forecastDays[weekCord] = [action.payload.week]
-
+                state.forecastDays[weekCord] = action.payload.week
 
                 state.cards.unshift({
                     ...action.payload.data,
@@ -56,7 +51,6 @@ const slice = createSlice({
                 state.title = ''
             })))
     }
-
 
 })
 
