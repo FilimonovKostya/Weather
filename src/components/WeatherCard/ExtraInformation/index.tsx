@@ -7,55 +7,58 @@ const ExtraInformation = ({callBack}: IExtraInformation) => (
     <div className={style.redWrapper}>
         <div className={style.icon} onClick={() => callBack(false)} role={"presentation"}><Arrow/></div>
         <ul className={style.weatherList}>
-            <li className={style.itemWeather}>
-                <span> Sunday </span>
-                <div className={style.itemInfoWeather}>
-                    {/*<div><Cloud/></div>*/}
-                    <p>44°</p>
-                </div>
-            </li>
-            <li className={style.itemWeather}>
-                <span> Sunday </span>
-                <div className={style.itemInfoWeather}>
-                    {/*<div><Cloud/></div>*/}
-                    <p>44°</p>
-                </div>
-            </li>
-            <li className={style.itemWeather}>
-                <span> Sunday </span>
-                <div className={style.itemInfoWeather}>
-                    {/*<div><Cloud/></div>*/}
-                    <p>44°</p>
-                </div>
-            </li>
-            <li className={style.itemWeather}>
-                <span> Sunday </span>
-                <div className={style.itemInfoWeather}>
-                    {/*<div><Cloud/></div>*/}
-                    <p>44°</p>
-                </div>
-            </li>
-            <li className={style.itemWeather}>
-                <span> Sunday </span>
-                <div className={style.itemInfoWeather}>
-                    {/*<div><Cloud/></div>*/}
-                    <p>44°</p>
-                </div>
-            </li>
-            <li className={style.itemWeather}>
-                <span> Sunday </span>
-                <div className={style.itemInfoWeather}>
-                    {/*<div><Cloud/></div>*/}
-                    <p>44°</p>
-                </div>
-            </li>
-            <li className={style.itemWeather}>
-                <span> Sunday </span>
-                <div className={style.itemInfoWeather}>
-                    {/*<div><Cloud/></div>*/}
-                    <p>44°</p>
-                </div>
-            </li>
+            {/*{*/}
+            {/*    daily.map(el => (*/}
+            {/*        <li className={style.itemWeather}>*/}
+            {/*            <span> Sunday </span>*/}
+            {/*            <div className={style.itemInfoWeather}>*/}
+            {/*                /!*<div><Cloud/></div>*!/*/}
+            {/*                <p>{el.temp.day}°</p>*/}
+            {/*            </div>*/}
+            {/*        </li>))*/}
+            {/*}*/}
+            {/*<li className={style.itemWeather}>*/}
+            {/*    <span> Sunday </span>*/}
+            {/*    <div className={style.itemInfoWeather}>*/}
+            {/*        /!*<div><Cloud/></div>*!/*/}
+            {/*        <p>44°</p>*/}
+            {/*    </div>*/}
+            {/*</li>*/}
+            {/*<li className={style.itemWeather}>*/}
+            {/*    <span> Sunday </span>*/}
+            {/*    <div className={style.itemInfoWeather}>*/}
+            {/*        /!*<div><Cloud/></div>*!/*/}
+            {/*        <p>44°</p>*/}
+            {/*    </div>*/}
+            {/*</li>*/}
+            {/*<li className={style.itemWeather}>*/}
+            {/*    <span> Sunday </span>*/}
+            {/*    <div className={style.itemInfoWeather}>*/}
+            {/*        /!*<div><Cloud/></div>*!/*/}
+            {/*        <p>44°</p>*/}
+            {/*    </div>*/}
+            {/*</li>*/}
+            {/*<li className={style.itemWeather}>*/}
+            {/*    <span> Sunday </span>*/}
+            {/*    <div className={style.itemInfoWeather}>*/}
+            {/*        /!*<div><Cloud/></div>*!/*/}
+            {/*        <p>44°</p>*/}
+            {/*    </div>*/}
+            {/*</li>*/}
+            {/*<li className={style.itemWeather}>*/}
+            {/*    <span> Sunday </span>*/}
+            {/*    <div className={style.itemInfoWeather}>*/}
+            {/*        /!*<div><Cloud/></div>*!/*/}
+            {/*        <p>44°</p>*/}
+            {/*    </div>*/}
+            {/*</li>*/}
+            {/*<li className={style.itemWeather}>*/}
+            {/*    <span> Sunday </span>*/}
+            {/*    <div className={style.itemInfoWeather}>*/}
+            {/*        /!*<div><Cloud/></div>*!/*/}
+            {/*        <p>44°</p>*/}
+            {/*    </div>*/}
+            {/*</li>*/}
         </ul>
     </div>
 );

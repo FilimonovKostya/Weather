@@ -8,7 +8,7 @@ import {ReactComponent as HumidityIcon} from "../../../assets/icons/humidity-svg
 import {ReactComponent as WindSpeedIcon} from "../../../assets/icons/wind-svgrepo-com.svg";
 import {IMainInfo} from "./types";
 
-export const MainInfo = ({callBack, country, description, icon, name, speed, temp, feelsLike, sunrise, humidity}: IMainInfo) => (
+export const MainInfo = ({ callBack, country, description, icon, name, speed, temp, feelsLike, sunrise, humidity}: IMainInfo) => (
     <div className={style.wrapper}>
         <div className={style.header}>
             <p className={style.title}>{name}, {country} </p>

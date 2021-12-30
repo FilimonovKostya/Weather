@@ -1,17 +1,23 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {IState} from "./types";
-import {searchAPI} from "api";
-import {dateHelper} from "../../../helpers";
+import {forecastDaysAPI, searchAPI} from "api";
+import {dateHelper} from "helpers";
 
 const initialState: IState = {
     title: '',
-    cards: []
+    cards: [],
+    forecastDays: {}
 }
 
 export const fetchSearch = createAsyncThunk('search/fetch', async (city: string, thunkAPI) => {
     try {
         const {data} = await searchAPI(city)
 
+        if (data) {
+            const data2 = await forecastDaysAPI(data.coord.lat, data.coord.lon)
+            console.log('Week ----->  ', data2.data)
+        }
+        console.log('DAY ----->  ', data)
         return {data}
     } catch (e) {
         throw new Error('Error with request for weather data')
@@ -29,6 +35,8 @@ const slice = createSlice({
     extraReducers: builder => {
         builder
             .addCase(fetchSearch.fulfilled, (((state, action) => {
+                // state.forecastDays.unshift(action.payload.daily[0])
+
                 state.cards.unshift({
                     ...action.payload.data,
                     main: {
@@ -36,7 +44,7 @@ const slice = createSlice({
                         temp: Math.round(action.payload.data.main.temp),
                         feels_like: Math.round(action.payload.data.main.feels_like)
                     },
-                    sys:{
+                    sys: {
                         ...action.payload.data.sys,
                         sunrise: dateHelper(+action.payload.data.sys.sunrise)
                     }

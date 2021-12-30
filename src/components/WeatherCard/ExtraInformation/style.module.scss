@@ -4,6 +4,7 @@
   @extend .wrapper;
   background: #e71d36;
 
+
   .icon {
     text-align: right;
     svg {
@@ -15,21 +16,21 @@
   }
 
   &.entering {
-    background: gold;
-    transform: rotate(15deg);
+    border: 20px solid yellow;
+
   }
 
   &.entered {
-    background: white;
-    transform: rotate(30deg);
+    border: 20px solid darkorange;
+
   }
 
   &.exiting {
-    background: pink;
-    transform: rotate(45deg);
+    border: 20px solid pink;
+
   }
 
   &.exited {
-    background: darkorange;
+    border: 20px solid green;
   }
 }

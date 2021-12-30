@@ -50,7 +50,7 @@ type DailiesWeather = {
     icon: string
 }
 
-type Dailies = {
+export type Dailies = {
     clouds: number
     dew_point: number
     dt: number

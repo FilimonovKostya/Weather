@@ -5,18 +5,22 @@
 
   &.entering {
     animation: animateHeight .6s ease-in;
+    //border: 5px solid cornflowerblue;
   }
 
   &.entered {
     animation: animateHeight .6s ease-in;
+    //border: 5px solid pink;
   }
 
   &.exiting {
     //animation: animateRemoved .6s ease-in;
+    //border: 5px solid green;
   }
 
   &.exited {
     //animation: animateRemoved .6s ease-in;
+    //border: 5px solid blueviolet;
   }
 
   @keyframes animateHeight {

@@ -2,7 +2,7 @@ import React from 'react';
 import Search from 'components/Search';
 import {useSelector} from "react-redux";
 import {RootState} from "store/store";
-import {IWeatherCardResponse} from "api/types";
+import {Dailies, IWeatherCardResponse} from "api/types";
 import WeatherCard from "components/WeatherCard";
 import {Transition} from "react-transition-group";
 import {DURATION_ANIMATION} from "../constants";
