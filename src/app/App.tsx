@@ -32,6 +32,7 @@ function App() {
                     feelsLike={card.main.feels_like}
                     icon={card.weather[0].icon}
                     sunrise={card.sys.sunrise}
+                    sunset={card.sys.sunset}
                     humidity={card.main.humidity}
                 />
             )

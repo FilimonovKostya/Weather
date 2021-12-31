@@ -12,6 +12,7 @@ export interface IWeatherCard {
     temp: number
     feelsLike: number
     sunrise: string | number
+    sunset: string | number
     humidity: number
     week: Dailies[]
 }

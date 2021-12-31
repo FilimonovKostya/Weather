@@ -54,7 +54,8 @@ const slice = createSlice({
                     },
                     sys: {
                         ...action.payload.data.sys,
-                        sunrise: dateHelper(+action.payload.data.sys.sunrise)
+                        sunrise: dateHelper(+action.payload.data.sys.sunrise),
+                        sunset: dateHelper(+action.payload.data.sys.sunset)
                     }
                 })
 

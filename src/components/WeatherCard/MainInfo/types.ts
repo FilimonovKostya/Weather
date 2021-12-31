@@ -8,5 +8,6 @@ export interface IMainInfo {
     temp: number
     feelsLike: number
     sunrise: string | number
+    sunset: string | number
     humidity: number
 }

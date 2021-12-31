@@ -35,7 +35,7 @@ export interface IWeatherCardResponse {
         id: number
         country: string
         sunrise: number | string
-        sunset: number
+        sunset: number | string
     },
     timezone: number
     id: number
