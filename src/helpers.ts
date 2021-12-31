@@ -5,3 +5,5 @@ export const dateHelper = (date: number): string => {
 
     return formatDate.split(':').slice(0, -1).join(':')
 }
+
+export const dayHelper = (date: number): string => new Date(date * DATE_SECONDS).toDateString().split(' ')[0]

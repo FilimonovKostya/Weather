@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {IState} from "./types";
 import {forecastDaysAPI, searchAPI} from "api";
-import {dateHelper} from "helpers";
+import {dateHelper, dayHelper} from "helpers";
 
 const initialState: IState = {
     title: '',
@@ -36,7 +36,9 @@ const slice = createSlice({
                 state.forecastDays[weekCord] = {
                     ...action.payload.week,
                     daily: action.payload.week.daily.map(el => ({
-                        ...el, temp: {
+                        ...el,
+                        dt: dayHelper(+el.dt),
+                        temp: {
                             ...el.temp,
                             day: Math.round(el.temp.day)
                         }

@@ -10,7 +10,7 @@ const ExtraInformation = ({callBack, week}: IExtraInformation) => (
             {
                 week.map((el, index) => (
                     <li key={index} className={style.itemWeather}>
-                        <span> Sunday </span>
+                        <span> {el.dt} </span>
                         <div className={style.itemInfoWeather}>
                             <p>{el.temp.day}°</p>
                         </div>

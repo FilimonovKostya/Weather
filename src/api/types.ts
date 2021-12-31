@@ -53,7 +53,7 @@ type DailiesWeather = {
 export type Dailies = {
     clouds: number
     dew_point: number
-    dt: number
+    dt: number | string
     feels_like: { day: number, night: number, eve: number, morn: number }
     humidity: number
     moon_phase: number
