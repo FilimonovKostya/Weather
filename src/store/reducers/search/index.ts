@@ -33,7 +33,15 @@ const slice = createSlice({
             .addCase(fetchSearch.fulfilled, (((state, action) => {
                 const weekCord = `${action.payload.week.lat}${action.payload.week.lon}`
 
-                state.forecastDays[weekCord] = action.payload.week
+                state.forecastDays[weekCord] = {
+                    ...action.payload.week,
+                    daily: action.payload.week.daily.map(el => ({
+                        ...el, temp: {
+                            ...el.temp,
+                            day: Math.round(el.temp.day)
+                        }
+                    }))
+                }
 
                 state.cards.unshift({
                     ...action.payload.data,
