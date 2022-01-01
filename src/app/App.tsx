@@ -7,11 +7,17 @@ import WeatherCard from "components/WeatherCard";
 import {Transition} from "react-transition-group";
 import {DURATION_ANIMATION} from "../constants";
 import {IForecastDays} from "store/reducers/search/types";
+import Preloader from "../components/Preloader";
 
 
 function App() {
     const weatherCard = useSelector<RootState, IWeatherCardResponse[]>(state => state.weather.cards)
     const week = useSelector<RootState, IForecastDays>(state => state.weather.forecastDays)
+    const isLoadingData = useSelector<RootState, boolean>(state => state.status.isLoading)
+
+    if (isLoadingData) {
+        return <Preloader/>
+    }
 
     return <div className={'app'}>
         <Transition in={weatherCard.length === 0} timeout={DURATION_ANIMATION}>

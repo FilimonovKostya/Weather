@@ -2,6 +2,7 @@ import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {IState} from "./types";
 import {forecastDaysAPI, searchAPI} from "api";
 import {dateHelper, dayHelper} from "helpers";
+import {setAppStatus, setErrorMessage} from "../appStatus";
 
 const initialState: IState = {
     title: '',
@@ -9,14 +10,17 @@ const initialState: IState = {
     forecastDays: {}
 }
 
-export const fetchSearch = createAsyncThunk('search/fetch', async (city: string) => {
+export const fetchSearch = createAsyncThunk('search/fetch', async (city: string, thunkAPI) => {
+    thunkAPI.dispatch(setAppStatus({isLoading: true}))
     try {
         const {data} = await searchAPI(city)
         const {data: week} = await forecastDaysAPI(data.coord.lat, data.coord.lon)
 
+        thunkAPI.dispatch(setAppStatus({isLoading: false}))
         return {data, week}
     } catch (e) {
-        throw new Error('Error with request for weather data')
+        thunkAPI.dispatch(setErrorMessage({message: 'Oop something went wrong , try to update page and try again'}))
+        return thunkAPI.rejectWithValue('error')
     }
 })
 

@@ -1,10 +1,12 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import thunkMiddleware from "redux-thunk";
 import {weatherSlice} from "./reducers/search";
+import {appSlice} from "./reducers/appStatus";
 
 
 const rootReducer = combineReducers({
     weather: weatherSlice,
+    status: appSlice
 })
 
 
