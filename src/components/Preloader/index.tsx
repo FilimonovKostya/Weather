@@ -3,10 +3,12 @@ import style from './style.module.scss'
 
 
 const Preloader = () => (
-    <div className={style.container}>
-        <div className={style.ring}/>
-        <div className={style.ring}/>
-        <div className={style.ring}/>
+    <div className={style.wrapper}>
+        <div className={style.container}>
+            <div className={style.ring}/>
+            <div className={style.ring}/>
+            <div className={style.ring}/>
+        </div>
     </div>
 )
 
