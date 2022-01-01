@@ -24,26 +24,28 @@ function App() {
             {state => <Search className={`${state}`}/>}
         </Transition>
 
-        <Transition in={weatherCard.length !== 0} timeout={DURATION_ANIMATION} mountOnEnter unmountOnExit>
-            {state => weatherCard.map((card, index) =>
-                <WeatherCard
-                    key={index}
-                    week={week[`${card.coord.lat}${card.coord.lon}`].daily}
-                    className={state}
-                    country={card.sys.country}
-                    name={card.name}
-                    speed={card.wind.speed}
-                    temp={card.main.temp}
-                    description={card.weather[0].description}
-                    feelsLike={card.main.feels_like}
-                    icon={card.weather[0].icon}
-                    sunrise={card.sys.sunrise}
-                    sunset={card.sys.sunset}
-                    humidity={card.main.humidity}
-                />
-            )
-            }
-        </Transition>
+
+
+            <Transition in={weatherCard.length !== 0} timeout={DURATION_ANIMATION} mountOnEnter unmountOnExit>
+                {state => weatherCard.map((card, index) =>
+                    <WeatherCard
+                        key={index}
+                        week={week[`${card.coord.lat}${card.coord.lon}`].daily}
+                        className={state}
+                        country={card.sys.country}
+                        name={card.name}
+                        speed={card.wind.speed}
+                        temp={card.main.temp}
+                        description={card.weather[0].description}
+                        feelsLike={card.main.feels_like}
+                        icon={card.weather[0].icon}
+                        sunrise={card.sys.sunrise}
+                        sunset={card.sys.sunset}
+                        humidity={card.main.humidity}
+                    />
+                )
+                }
+            </Transition>
 
     </div>
 }

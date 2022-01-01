@@ -22,9 +22,6 @@ code {
 }
 
 .app {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    align-items: center;
-    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 50px;
 }
