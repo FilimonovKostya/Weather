@@ -24,8 +24,7 @@ function App() {
             {state => <Search className={`${state}`}/>}
         </Transition>
 
-
-
+        <div className={'wrapper'}>
             <Transition in={weatherCard.length !== 0} timeout={DURATION_ANIMATION} mountOnEnter unmountOnExit>
                 {state => weatherCard.map((card, index) =>
                     <WeatherCard
@@ -46,7 +45,7 @@ function App() {
                 )
                 }
             </Transition>
-
+        </div>
     </div>
 }
 
